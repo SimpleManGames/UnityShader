@@ -18,20 +18,19 @@ struct appdata {
     uniform float _Outline;
     uniform float4 _OutlineColor;
     v2f vert(appdata v) {
-		v2f o;
-        
-		//o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+        v2f o;
+        //o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
         //float3 norm = normalize(mul((float3x3)UNITY_MATRIX_IT_MV, v.normal));
         //float2 offset = TransformViewToProjection(norm.xy);
         //o.pos.xy += offset * o.pos.z * _Outline;
 
 		o.pos = v.vertex;
-		o.pos.xyz += v.normal.xyz * _Outline * 1;
-		o.pos = mul(UNITY_MATRIX_MVP, o.pos);
-		
+        o.pos.xyz += v.normal.xyz * _Outline * 1;
+        o.pos = mul(UNITY_MATRIX_MVP, o.pos);
         o.color = _OutlineColor;
         return o;
     }
+
 
 ENDCG
  
@@ -71,7 +70,10 @@ ENDCG
 		#pragma vertex vert
 		#pragma fragment frag
  
-		half4 frag(v2f i) : COLOR { return i.color; }
+		half4 frag(v2f i) : COLOR {
+                return i.color;
+            }
+
 
 		ENDCG
 		}

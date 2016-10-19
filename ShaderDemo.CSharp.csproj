@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\ExtendedFlyCam.cs" />
     <Compile Include="Assets\Scripts\Wave.cs" />
     <Compile Include="Assets\Shader Scripts\CRT.cs" />
   </ItemGroup>
